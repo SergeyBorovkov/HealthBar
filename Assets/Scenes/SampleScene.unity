@@ -449,7 +449,6 @@ GameObject:
   m_Component:
   - component: {fileID: 648828349}
   - component: {fileID: 648828350}
-  - component: {fileID: 648828352}
   - component: {fileID: 648828351}
   m_Layer: 5
   m_Name: Health_slider
@@ -543,20 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 648828350}
---- !u!114 &648828352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648828348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b845fe1b275c6f7428639576e5e57368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _currentHealth: 0
+  _health: {fileID: 1582663311}
 --- !u!1 &747868981
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +629,7 @@ GameObject:
   - component: {fileID: 817350117}
   - component: {fileID: 817350116}
   - component: {fileID: 817350115}
+  - component: {fileID: 817350118}
   m_Layer: 5
   m_Name: Cure_button
   m_TagString: Untagged
@@ -713,7 +700,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737437325}
+      - m_Target: {fileID: 817350118}
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -761,6 +748,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817350113}
   m_CullTransparentMesh: 0
+--- !u!114 &817350118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817350113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81163b8e5540bd146ab96681e04bfe74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 648828350}
+  _health: {fileID: 1582663311}
 --- !u!1 &835145299
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +854,7 @@ GameObject:
   - component: {fileID: 946908885}
   - component: {fileID: 946908884}
   - component: {fileID: 946908883}
+  - component: {fileID: 946908886}
   m_Layer: 5
   m_Name: Damage_button
   m_TagString: Untagged
@@ -923,7 +925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737437328}
+      - m_Target: {fileID: 946908886}
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
@@ -971,6 +973,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946908881}
   m_CullTransparentMesh: 0
+--- !u!114 &946908886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946908881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d282105113c078b40a371ab1b33652a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 648828350}
+  _health: {fileID: 1582663311}
 --- !u!1 &1077089459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 648828350}
-  _currentHealth: 0
+  _currentHealth: 50
 --- !u!114 &1582663312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,9 +1598,6 @@ GameObject:
   - component: {fileID: 1737437323}
   - component: {fileID: 1737437322}
   - component: {fileID: 1737437321}
-  - component: {fileID: 1737437325}
-  - component: {fileID: 1737437328}
-  - component: {fileID: 1737437327}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1676,48 +1689,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1737437325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737437320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81163b8e5540bd146ab96681e04bfe74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _cure: {fileID: 817350115}
---- !u!114 &1737437327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737437320}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b845fe1b275c6f7428639576e5e57368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _currentHealth: 0
---- !u!114 &1737437328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737437320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d282105113c078b40a371ab1b33652a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _cure: {fileID: 946908883}
 --- !u!1 &1983239197
 GameObject:
   m_ObjectHideFlags: 0
