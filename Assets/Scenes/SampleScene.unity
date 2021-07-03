@@ -528,7 +528,18 @@ MonoBehaviour:
   m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1582663311}
+        m_MethodName: Smooth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &648828351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +554,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 648828350}
   _health: {fileID: 1582663311}
+  _cure: {fileID: 0}
+  _damage: {fileID: 0}
 --- !u!1 &747868981
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81163b8e5540bd146ab96681e04bfe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 648828350}
   _health: {fileID: 1582663311}
 --- !u!1 &835145299
 GameObject:
@@ -985,7 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d282105113c078b40a371ab1b33652a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 648828350}
   _health: {fileID: 1582663311}
 --- !u!1 &1077089459
 GameObject:
@@ -1439,8 +1450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b845fe1b275c6f7428639576e5e57368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 648828350}
   _currentHealth: 50
+  _minHealth: 0
+  _maxHealth: 100
 --- !u!114 &1582663312
 MonoBehaviour:
   m_ObjectHideFlags: 0

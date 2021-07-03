@@ -26,6 +26,6 @@ public class PlayerHealth : MonoBehaviour
         _currentHealth -= healthPoints;
 
         if (_currentHealth < _minHealth)
-            _currentHealth = _maxHealth;
+            _currentHealth = _minHealth;
     }
 }

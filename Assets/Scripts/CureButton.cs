@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CureButton : MonoBehaviour
-{
-    [SerializeField] private Slider _slider;    
+{    
     [SerializeField] private PlayerHealth _health;
         
     private float _curePoints = 10f;
