@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class PlayerHealth : MonoBehaviour
 {    
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _minHealth = 0;
-    [SerializeField] private float _maxHealth = 100;    
-    [SerializeField] private Healthbar _bar;
+    [SerializeField] private float _maxHealth = 100;
+    [SerializeField] private UnityEvent _changed;
 
-
-    private bool _isChanged = false;
 
     public float CurrentHealth => _currentHealth;
     public float MinHealth => _minHealth;
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth > _maxHealth)
             _currentHealth = _maxHealth;
 
-        _bar.Change();
+        _changed.Invoke();
     }
 
     public void Damage(float healthPoints)
@@ -34,6 +34,6 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth < _minHealth)
             _currentHealth = _minHealth;
 
-        _bar.Change();
+        _changed.Invoke();
     }
 }
