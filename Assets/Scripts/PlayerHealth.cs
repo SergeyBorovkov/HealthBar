@@ -7,7 +7,11 @@ public class PlayerHealth : MonoBehaviour
 {    
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _minHealth = 0;
-    [SerializeField] private float _maxHealth = 100;
+    [SerializeField] private float _maxHealth = 100;    
+    [SerializeField] private Healthbar _bar;
+
+
+    private bool _isChanged = false;
 
     public float CurrentHealth => _currentHealth;
     public float MinHealth => _minHealth;
@@ -19,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (_currentHealth > _maxHealth)
             _currentHealth = _maxHealth;
+
+        _bar.Change();
     }
 
     public void Damage(float healthPoints)
@@ -27,5 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (_currentHealth < _minHealth)
             _currentHealth = _minHealth;
+
+        _bar.Change();
     }
 }

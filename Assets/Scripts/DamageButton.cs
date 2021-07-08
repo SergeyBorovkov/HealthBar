@@ -7,10 +7,10 @@ public class DamageButton : MonoBehaviour
 {    
     [SerializeField] private PlayerHealth _health;
         
-    private float _curePoints = 10f;
+    private float _damagePoints = 10f;
 
     public void OnButtonClick()
     {
-        _health.Damage(_curePoints);        
+        _health.Damage(_damagePoints);        
     }
 }
