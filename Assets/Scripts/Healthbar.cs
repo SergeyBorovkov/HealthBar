@@ -24,12 +24,10 @@ public class Healthbar : MonoBehaviour
     }
 
     private IEnumerator SmoothMove()
-    {       
-        float delta = _speed * Time.deltaTime;        
-
+    {     
         while (_slider.value != _health.CurrentHealth)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, _health.CurrentHealth, delta);
+            _slider.value = Mathf.MoveTowards(_slider.value, _health.CurrentHealth, _speed * Time.deltaTime);            
             yield return null;
         }
     }
